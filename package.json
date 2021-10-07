@@ -1,12 +1,13 @@
 {
-  "name": "character-match",
+  "name": "character-match-349",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run clean && npm install && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf node_modules"
   },
   "dependencies": {
     "next": "11.1.2",
