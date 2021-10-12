@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf node_modules"
+    "clean": "rmdir /s /q node_modules"
   },
   "dependencies": {
     "next": "11.1.2",
