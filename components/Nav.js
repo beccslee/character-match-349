@@ -1,11 +1,17 @@
 import styles from "../styles/Nav.module.css";
 
 function Nav() {
-    return (
-        <div className={styles.navbar}>
-            This is a navbar
-        </div>
-    );
+  return (
+    <header className={styles.header}>
+      <div className={styles.wrapper}>
+        <nav className={styles.nav}>
+          <a href="#">PLAY NOW</a>
+          <a href="#">SUBMIT A CHARACTER</a>
+          <a href="#">ABOUT</a>
+        </nav>
+      </div>
+    </header>
+  );
 }
 
 export default Nav;
