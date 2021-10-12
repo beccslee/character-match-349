@@ -1,6 +1,6 @@
-import styles from "../styles/Header.module.css";
+import styles from "../styles/Banner.module.css";
 
-function Head() {
+function Banner() {
   return (
     <div className={styles.bannerArea}>
       <h1>
@@ -13,4 +13,4 @@ function Head() {
   );
 }
 
-export default Head;
+export default Banner;

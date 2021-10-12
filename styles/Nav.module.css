@@ -1,9 +1,9 @@
 .header {
-  background: #262626;
+  background: #1a1919;
   width: 100%;
   z-index: 1;
   position: fixed;
-  padding: 1em 0;
+  padding: 0.8em 0;
 }
 
 .wrapper {
@@ -19,7 +19,7 @@
 .nav a {
   text-decoration: none;
   letter-spacing: 4px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #fff;
   font-family: sans-serif;
   font-weight: 700;
