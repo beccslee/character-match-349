@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.25em 0;
+}
+
+.formLabel {
+    margin: 0.65em 0;
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 1.25rem;
+}
+
+.characterNameInput {
+    padding: 0.5em 0.75em;
+    background-color: #404040;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    font-size: 1.025rem;
+    width: 55%;
+    color: #ffffff;
+    margin-bottom: 0.5em;
+}
