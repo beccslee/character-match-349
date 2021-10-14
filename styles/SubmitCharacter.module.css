@@ -5,10 +5,10 @@
     padding: 2.5em;
 }
 
-.submitPageContainer h1 {
+.submitPageHeading{
     color: #ffffff;
-    font-family: sans-serif;
     text-align: center;
+    text-shadow: 1px 4px 1px #000000;
 }
 
 .formContainer {
@@ -17,7 +17,7 @@
     border: 1px solid #ffffff;
     border-radius: 10px;
     padding: 1em;
-    width: 65%;
+    width: 60%;
 }
 
 .formHeading{
