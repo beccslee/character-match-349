@@ -1,7 +1,29 @@
-.testing {
-    background: black;
-    height: 5rem;
-    width: 100%;
-    color: #ffffff;
-    text-align: center;
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  height: 100%;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  padding: 1em;
+  margin-top: auto;
+  position: relative;
+}
+
+#button {
+  font-size: 1.5rem;
+  color: #fff12a;
+  bottom: 35px;
+  margin-top: -50px;
+}
+
+.footerText {
+  padding: 1em;
+  color: #fff12a;
+  margin-top: -10px;
+}
+
+.footerText2 {
+  color: #ffffff;
 }
