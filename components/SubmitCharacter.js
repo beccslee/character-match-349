@@ -9,7 +9,6 @@ function SubmitCharacter() {
             <h3 className={styles.formHeading}>We'll just need a couple of details first...</h3>
             <Form/>
         </div>
-        
     </div>
     );
 }
