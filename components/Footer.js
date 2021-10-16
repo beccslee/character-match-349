@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className={styles.footer}>
       <div id={styles.button}>
-        <a href="#top">
+        <a href="#play">
           <i className="fa fa-arrow-circle-up fa-4x"></i>
         </a>
       </div>
@@ -13,7 +13,7 @@ function Footer() {
         Team Barry | CPSC 349 - Section 01 | Fall Semester, 2021
         <div className={styles.footerText2}>
           All characters presented are not property of our team, and they all
-          belong to their respective franchies. Their use is for entertainment &
+          belong to their respective franchises. Their use is for entertainment &
           educational purposes only.
         </div>
       </div>

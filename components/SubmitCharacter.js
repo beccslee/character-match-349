@@ -1,14 +1,14 @@
 import styles from "../styles/SubmitCharacter.module.css";
 import Form from "./Form.js";
 
-function SubmitCharacter() {
+function SubmitCharacter({id}) {
     return (
-    <div className={styles.submitPageContainer}>
+    <div className={styles.submitPageContainer} id={id}>
         <h1 className={styles.submitPageHeading}>SUBMIT YOUR FAVORITE CHARACTER!</h1>
-        <div className={styles.formContainer}>
-            <h3 className={styles.formHeading}>We'll just need a couple of details first...</h3>
+        <fieldset className={styles.formContainer}>
+            <legend className={styles.formHeading}>We'll just need a few details first</legend>
             <Form/>
-        </div>
+        </fieldset>
     </div>
     );
 }

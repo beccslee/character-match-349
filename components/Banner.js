@@ -1,8 +1,8 @@
 import styles from "../styles/Banner.module.css";
 
-function Banner() {
+function Banner({id}) {
   return (
-    <div className={styles.bannerArea}>
+    <div className={styles.bannerArea} id={id}>
       <h1>
         <span className={styles.first}>W</span>ho{" "}
         <span className={styles.first}>w</span>ould{" "}

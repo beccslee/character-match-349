@@ -13,7 +13,7 @@
 
 .aboutContentContainer {
   margin: 2em auto;
-  width: 75%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
 }
@@ -27,31 +27,46 @@
 }
 
 .projectDetailsContainer {
-  width: 32%;
+  width: 40%;
   border: 2px solid #ffffff;
-  padding: 0.55em;
   border-radius: 8px;
   box-shadow: 2px 2px 2px #000000;
   background-color: #272727;
+  max-height: 28rem;
+  overflow: hidden;
+  position: relative;
+  padding: 0.55em;
 }
 
 .projectDetailsText {
   color: #ffffff;
   text-align: justify;
+  position: absolute;
+  overflow: hidden;
+  text-overflow: hidden;
+  padding: 0 0.55em 0 0;
 }
 
 .teamDetailsContainer {
   width: 36%;
   border: 2px solid #ffffff;
-  padding: 0.75em;
   border-radius: 8px;
+  padding: 0.55em;
   box-shadow: 2px 2px 2px #000000;
   background-color: #272727;
   color: #ffffff;
+  max-height: 28rem;
+  overflow: hidden;
+  position: relative;
+  padding: 0.55em;
 }
 
 .teamList {
   list-style: none;
+  padding: 0 0.55em 0 0;
+  position: relative;
+  overflow: hidden;
+  text-overflow: hidden;
 }
 
 .teamMember:first-of-type {

@@ -11,9 +11,9 @@ export default function Home() {
     
     <div className={styles.contentContainer}>
       <Nav/>
-      <Banner/>
-      <SubmitCharacter/>
-      <About/>
+      <Banner id="play"/>
+      <SubmitCharacter id="submit"/>
+      <About id="about"/>
       <Footer/>
     </div>
   );

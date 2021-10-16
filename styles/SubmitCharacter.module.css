@@ -14,16 +14,18 @@
 .formContainer {
     margin: 3em auto;
     background-color: #2b2b2b;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
     border-radius: 10px;
-    padding: 1em;
+    padding: 0.1em 1em 1em 1em;
     width: 60%;
+    box-shadow: 4px 4px 4px #000000;
+    max-height: 25rem;
 }
 
 .formHeading{
     color: #ffffff;
-    text-align: center;
-    font-weight: 400;
-    font-size: 1.55rem;
-    margin-bottom: 0.3em;
+    text-shadow: 1px 3px 1px #000000;
+    font-size: 1.75rem;
+    padding: 0 0.15em;
+    font-weight: 600;
 }

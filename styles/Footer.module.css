@@ -1,7 +1,7 @@
 .footer {
   display: flex;
   flex-direction: column;
-  background: black;
+  background: #131212;
   height: 100%;
   width: 100%;
   color: #ffffff;
@@ -9,13 +9,18 @@
   padding: 1em;
   margin-top: auto;
   position: relative;
+  font-size: 1rem;
 }
 
 #button {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: #fff12a;
   bottom: 35px;
   margin-top: -50px;
+}
+
+#button i:hover {
+  color: #ddd23d;
 }
 
 .footerText {
