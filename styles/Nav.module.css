@@ -26,5 +26,20 @@
 }
 
 .nav a:hover {
-  color: #fff12a
+  color: #fff12a;
+}
+
+@media only screen and (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav a {
+    padding: 0.5em;
+    font-size: 1rem;
+    border-bottom: solid;
+    border-width: 0.1em;
+  }
 }
