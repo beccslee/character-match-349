@@ -1,58 +1,80 @@
 .bannerArea {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.275)),
-        url(https://pbs.twimg.com/media/EtnejpYUcAIEhau.jpg:large);
-    height: 100vh;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    animation: backgroundScroll 55s linear 1;
-    animation-iteration-count: infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.275)),
+    url(https://pbs.twimg.com/media/EtnejpYUcAIEhau.jpg:large);
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  animation: backgroundScroll 55s linear 1;
+  animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .bannerArea h1 {
-    font-size: 6rem;
-    text-transform: uppercase;
-    color: #fff;
-    text-shadow: 4px 5px 1px #000000;
-    margin-bottom: 2rem;
-    text-align: center;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 4px 5px 1px #000000;
+  margin-bottom: 2rem;
+  text-align: center;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .first {
-    color: #fff12a;
+  color: #fff12a;
 }
 
 .button {
-    padding: 0.85em 1.85em;
-    background-color: #fff12a;
-    text-transform: uppercase;
-    color: #000000;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 2.15rem;
-    box-shadow: 3px 3px 1px #000000;
+  padding: 0.85em 1.85em;
+  background-color: #fff12a;
+  text-transform: uppercase;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 2.15rem;
+  box-shadow: 3px 3px 1px #000000;
 }
 
 .button:hover {
-    background-color: #ddd23d;
-    cursor: pointer;
+  background-color: #ddd23d;
+  cursor: pointer;
 }
 
 @keyframes backgroundScroll {
-    from {
-        background-position: 0 0;
-    }
+  from {
+    background-position: 0 0;
+  }
 
-    to {
-        background-position: -65rem 0rem;
-    }
+  to {
+    background-position: -65rem 0rem;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .bannerArea h1 {
+    margin: 1rem;
+    font-size: 4.5rem;
+  }
+  .button {
+    padding: 0.55em 1.55em;
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .bannerArea h1 {
+    margin: 1rem;
+    font-size: 3.5rem;
+  }
+  .button {
+    padding: 0.45em 1.45em;
+    font-size: 2rem;
+  }
 }

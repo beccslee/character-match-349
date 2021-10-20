@@ -6,7 +6,7 @@
 
 .aboutPageHeading {
   width: 100%;
-  order: 0;
+
   color: #ffffff;
   text-align: center;
   text-shadow: 1px 4px 1px #000000;
@@ -81,7 +81,4 @@
 .teamMemberName {
   font-weight: 700;
   font-size: 1.15rem;
-}
-
-@media only screen and (max-width: 700px) {
 }
