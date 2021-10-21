@@ -13,12 +13,11 @@ function About({id}) {
                 
                 <fieldset className={styles.teamDetailsContainer}>
                     <legend className={styles.detailsHeading}>Meet the Team</legend>
-                    <ul className={styles.teamList}>
-                        <li className={styles.teamMember}><h4 className={styles.teamMemberName}>Stephen Landaas</h4><p className={styles.teamMemberDesc}>Team Leader, UI Design, HTML, CSS, React Components</p></li>
-                        <li className={styles.teamMember}><h4 className={styles.teamMemberName}>Rebecca Lee</h4><p className={styles.teamMemberDesc}>General Project Management, JavaScript, React Integration</p></li>
-                        <li className={styles.teamMember}><h4 className={styles.teamMemberName}>Ali Hussain</h4><p className={styles.teamMemberDesc}>UI Design, HTML, CSS</p></li>
-                        <li className={styles.teamMember}><h4 className={styles.teamMemberName}>Ethan Kamus</h4><p className={styles.teamMemberDesc}>General Database Management, Google Firestore</p></li>
-                    </ul>
+                    <p className={styles.teamMember}><strong>Stephen Landaas</strong> - Team Leader, UI Design, HTML, CSS, React Setup</p>
+                    <p className={styles.teamMember}><strong>Rebecca Lee</strong> - JavaScript, React Integration, CSS</p>
+                    <p className={styles.teamMember}><strong>Ali Hussain</strong> - HTML, CSS, JavaScript</p>
+                    <p className={styles.teamMember}><strong>Ethan Kamus</strong> - Database Management , Google Firestore, JavaScript</p>
+
                 </fieldset>
             </div>
         </div>

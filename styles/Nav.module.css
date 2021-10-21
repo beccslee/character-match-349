@@ -37,9 +37,9 @@
   }
 
   .nav a {
-    padding: 0.3em;
     font-size: 1rem;
     border-bottom: solid;
     border-width: 0.1em;
+    margin: 0.45em 0;
   }
 }
