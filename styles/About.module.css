@@ -67,11 +67,11 @@
 
 @media only screen and (max-width: 800px) {
   .projectDetailsContainer {
-    width: 90%;
+    width: 95%;
     margin: 0.25rem 0 3rem;
   }
   .teamDetailsContainer {
-    width: 90%;
+    width: 95%;
   }
   .aboutContentContainer {
     flex-direction: column;
