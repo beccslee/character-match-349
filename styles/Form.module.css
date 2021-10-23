@@ -1,67 +1,67 @@
 .form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    padding: 0.25em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 0.25em 0;
 }
 
 .formLabel {
-    margin: 0.65em 0;
-    color: #ffffff;
-    text-decoration: underline;
-    font-size: 1.25rem;
+  margin: 0.65em 0;
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 1.25rem;
 }
 
 .characterNameInput {
-    padding: 0.5em 0.75em;
-    background-color: #404040;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
-    font-size: 1.025rem;
-    width: 55%;
-    color: #ffffff;
-    margin-bottom: 0.15em;
+  padding: 0.5em 0.75em;
+  background-color: #404040;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  font-size: 1.025rem;
+  width: 55%;
+  color: #ffffff;
+  margin-bottom: 0.15em;
 }
 
 .imgSub {
-    display: none;
+  display: none;
 }
 
 .specialLabel {
-    background-color: #404040;
-    font-size: 1.025rem;
-    color: #ffffff;
-    padding: 0.55em 1.75em;
-    border: 2px solid #ffffff;
-    box-shadow: 2px 2px 2px #000000;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 0.5em;
+  background-color: #404040;
+  font-size: 1.025rem;
+  color: #ffffff;
+  padding: 0.55em 1.75em;
+  border: 2px solid #ffffff;
+  box-shadow: 2px 2px 2px #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 0.5em;
 }
 
 .specialLabel:hover {
-    background-color: #3a3a3a
+  background-color: #3a3a3a;
 }
 
 .selectedFile {
-    color: #ffffff;
-    font-size: 0.9rem;
+  color: #ffffff;
+  font-size: 0.9rem;
 }
 
 .characterSubmitButton {
-    margin: 0.15em 0;
-    padding: 0.5em;
-    background-color: #eee234;
-    border: none;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-size: 1.125rem;
-    font-weight: 600;
-    cursor: pointer;
+  margin: 0.15em 0;
+  padding: 0.5em;
+  background-color: #eee234;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .characterSubmitButton:hover {
-    background-color: #ddd23d;
+  background-color: #ddd23d;
 }
