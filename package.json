@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run clean && npm install && next dev",
-    "build": "next build",
+    "dev": "next dev",
+    "build": "npm run clean && npm install && next build",
     "start": "next start",
     "lint": "next lint",
     "clean": "rmdir /s /q node_modules"
