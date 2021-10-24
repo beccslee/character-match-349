@@ -1,0 +1,19 @@
+{
+	"editor.tabSize": 4,
+	"[javascript]": {
+		"editor.tabSize": 4
+	},
+	"[json]": {
+		"editor.tabSize": 2
+	},
+	"editor.detectIndentation": true,
+	"editor.insertSpaces": false,
+	"eslint.alwaysShowStatus": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.organizeImports": false
+  },
+	"files.autoSave": "onFocusChange",
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true
+}
