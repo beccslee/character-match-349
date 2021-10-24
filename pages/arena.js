@@ -9,13 +9,17 @@ export default function Arena() {
   return (
     <div className={styles.arenaContainer}>
       <div className={styles.headingContainer}>
-        <button className={styles.backButton} onClick={() => router.push('/')}>
+        <button className={styles.backButton} onClick={() => router.push("/")}>
           <i className="fa fa-arrow-left"></i>
         </button>
         <h1 className={styles.arenaHeader}>
           A<span className={styles.letter1}>R</span>EN
           <span className={styles.letter2}>A</span>
         </h1>
+      </div>
+      <div className={styles.GameCards}>
+        <GameCard />
+        <GameCard />
       </div>
     </div>
   );

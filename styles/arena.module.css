@@ -1,270 +1,282 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:400i);
 
 .arenaContainer {
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("http://djlittlematt.com/wp-content/uploads/2017/09/bg-black-brick.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .headingContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .backButton {
-    position: absolute;
-    color: #860000;
-    background: transparent;
-    border: 2px solid #860000;
-    text-shadow: 0 0 2px #d42626, 0 0 3px #c90d0d;
-    box-shadow: 0 0 5px #d42626, 0 0 7px #c90d0d, 0 0 8px #dd0000;
-    border-radius: 50%;
-    font-size: 2.6rem;
-    height: 3rem;
-    width: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.6em;
-    top: 0.45em;
-    left: 0.35em;
-    cursor: pointer;
+  position: absolute;
+  color: #860000;
+  background: transparent;
+  border: 2px solid #860000;
+  text-shadow: 0 0 2px #d42626, 0 0 3px #c90d0d;
+  box-shadow: 0 0 5px #d42626, 0 0 7px #c90d0d, 0 0 8px #dd0000;
+  border-radius: 50%;
+  font-size: 2.6rem;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6em;
+  top: 0.45em;
+  left: 0.35em;
+  cursor: pointer;
 }
 
 .backButton:hover {
-    text-shadow: 0 0 1px #d42626, 0 0 1px #c90d0d;
-    box-shadow: 0 0 3px #d42626, 0 0 4px #c90d0d, 0 0 5px #dd0000;
+  text-shadow: 0 0 1px #d42626, 0 0 1px #c90d0d;
+  box-shadow: 0 0 3px #d42626, 0 0 4px #c90d0d, 0 0 5px #dd0000;
 }
 
-
 .arenaHeader {
-    font-size: 5.5rem;
-    color: #e3fcff;
-    font-family: "Exo 2", sans-serif;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 12px #53ddff;
-    letter-spacing: 0.125em;
-    animation: glow 8s infinite alternate-reverse;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  font-size: 5.5rem;
+  color: #e3fcff;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 12px #53ddff;
+  letter-spacing: 0.125em;
+  animation: glow 8s infinite alternate-reverse;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .letter1 {
-    animation: letter-flicker-1 3s infinite alternate-reverse;
+  animation: letter-flicker-1 3s infinite alternate-reverse;
 }
 
 .letter2 {
-    animation: letter-flicker-2 4s infinite alternate;
+  animation: letter-flicker-2 4s infinite alternate;
+}
+
+.GameCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 900px) {
+  .GameCards {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
 
 /* ANIMATIONS */
 @keyframes letter-flicker-1 {
-    0% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 1;
-    }
-    
-    7% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  0% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 1;
+  }
 
-    16% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  7% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    17% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.85;
-    }
+  16% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    19% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  17% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.85;
+  }
 
-    25% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.98;
-    }
+  19% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    30% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  25% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.98;
+  }
 
-    40% { 
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;    
-    }
+  30% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    68% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  40% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    70% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  68% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    72% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  70% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    74% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.75;
-    }
+  72% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    77% {
-        text-shadow: 0 0 8px #5fdfff, 0 0 14px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  74% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.75;
+  }
 
-    91% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 14px #53ddff;
-        opacity: 0.95;
-    }
+  77% {
+    text-shadow: 0 0 8px #5fdfff, 0 0 14px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    98% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  91% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 14px #53ddff;
+    opacity: 0.95;
+  }
+
+  98% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 }
 
 @keyframes glow {
-    0% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-    }
+  0% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+  }
 
-    8% {
-        text-shadow: 0 0 8px #5fdfff, 0 0 11px #cbfaff, 0 0 14px #53ddff;
-        opacity: 0.95;
-    }
+  8% {
+    text-shadow: 0 0 8px #5fdfff, 0 0 11px #cbfaff, 0 0 14px #53ddff;
+    opacity: 0.95;
+  }
 
-    14% {
-        text-shadow: 0 0 8px #5fdfff, 0 0 11px #cbfaff, 0 0 16px #53ddff;
-    }
+  14% {
+    text-shadow: 0 0 8px #5fdfff, 0 0 11px #cbfaff, 0 0 16px #53ddff;
+  }
 
-    25% {
-        text-shadow: 0 0 9px #5fdfff, 0 0 11px #cbfaff, 0 0 14px #53ddff;
-    }
-    
-    32% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.8;
-    }
+  25% {
+    text-shadow: 0 0 9px #5fdfff, 0 0 11px #cbfaff, 0 0 14px #53ddff;
+  }
 
-    40% {
-        text-shadow: 0 0 6px #5fdfff, 0 0 12px #cbfaff, 0 0 13px #53ddff;
-    }
+  32% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.8;
+  }
 
-    53% {
-        text-shadow: 0 0 4px #5fdfff, 0 0 11px #cbfaff, 0 0 15px #53ddff;
-        opacity: 1;
-    }
+  40% {
+    text-shadow: 0 0 6px #5fdfff, 0 0 12px #cbfaff, 0 0 13px #53ddff;
+  }
 
-    60% {
-        text-shadow: 0 0 8px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-    }
+  53% {
+    text-shadow: 0 0 4px #5fdfff, 0 0 11px #cbfaff, 0 0 15px #53ddff;
+    opacity: 1;
+  }
 
-    72% {
-        text-shadow: 0 0 6px #5fdfff, 0 0 12px #cbfaff, 0 0 14px #53ddff;
-    }
+  60% {
+    text-shadow: 0 0 8px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+  }
 
-    88% {
-        text-shadow: 0 0 8px #5fdfff, 0 0 11px #cbfaff, 0 0 12px #53ddff;
-        opacity: 0.85;
-    }
+  72% {
+    text-shadow: 0 0 6px #5fdfff, 0 0 12px #cbfaff, 0 0 14px #53ddff;
+  }
 
-    95% {
-        text-shadow: 0 0 8px #5fdfff, 0 0 10px #cbfaff, 0 0 12px #53ddff;
-    }
+  88% {
+    text-shadow: 0 0 8px #5fdfff, 0 0 11px #cbfaff, 0 0 12px #53ddff;
+    opacity: 0.85;
+  }
+
+  95% {
+    text-shadow: 0 0 8px #5fdfff, 0 0 10px #cbfaff, 0 0 12px #53ddff;
+  }
 }
 
-
 @keyframes letter-flicker-2 {
-    0% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 1;
-    }
+  0% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 1;
+  }
 
-    5% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  5% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    7% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.35;
-    }
+  7% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.35;
+  }
 
-    9% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  9% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    15% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  15% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    17% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  17% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    30% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  30% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    60% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;   
-    }
+  60% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    62% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.15;
-    }
+  62% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.15;
+  }
 
-    64% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  64% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    66% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.15;
-    }
+  66% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.15;
+  }
 
-    68% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.95;
-    }
+  68% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.95;
+  }
 
-    75% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 14px #53ddff;
-        opacity: 0.95;
-    }
+  75% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 14px #53ddff;
+    opacity: 0.95;
+  }
 
-    82% {
-        text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
-        opacity: 0.98;
-    }
+  82% {
+    text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
+    opacity: 0.98;
+  }
 }

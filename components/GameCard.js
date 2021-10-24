@@ -4,7 +4,7 @@ function GameCard() {
   return (
     <div className={styles.gamecardContainer}>
       <h1 className={styles.title}>
-        <span>WORMY</span>
+        <span>THIS IS A TEST SENTENCE yes</span>
       </h1>
       <footer className={styles.bottom}></footer>
     </div>

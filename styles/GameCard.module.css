@@ -1,6 +1,6 @@
 .gamecardContainer {
-  --clr-primary: #ff1e00;
-  --clr-secondary: #2032cf;
+  --clr-primary: #000000;
+  --clr-secondary: #138caa;
   --clr-accent: #f7f7ff;
   --clr-gradient: linear-gradient(
     -90deg,
@@ -15,12 +15,15 @@
 }
 
 .gamecardContainer {
+  border: solid red;
+  border-width: 0.1em;
   background-image: url(https://i.imgur.com/YZHt8do.png);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  margin: 0;
-  min-height: 100vh;
+  margin: 0.5em; /* to change with media q. */
+  min-height: 60vh; /* to change with media q. */
+  width: 40vh; /* to change with media q. */
   font-weight: var(--fw-body);
   font-size: 1.25rem;
   display: flex;
@@ -32,15 +35,18 @@
 .bottom {
   text-align: center;
   text-transform: uppercase;
-  padding: 1em 0 2em;
+  padding: 0.5em 0 1em; /* to change with media q. */
   margin: 0;
   background: var(--clr-gradient);
   position: relative;
   z-index: 1000;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .title {
-  height: 5vh;
   font-size: calc(1rem + 3vw);
   font-family: var(--ff-title);
   font-weight: var(--fw-title);
@@ -50,13 +56,13 @@
 
 .title span {
   font-weight: var(--fw-number);
-  color: black;
+  color: rgb(0, 222, 252);
   display: inline-block;
   position: absolute;
   left: 0;
   right: 0;
-  font-size: 2em;
-  top: -10%;
+  font-size: 4rem; /* to change with media q. */
+  top: -10%; /* to change with media q. */
   z-index: -1;
   opacity: 0.45;
 }
@@ -74,4 +80,91 @@
   padding: 6em 0 1em;
   clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
   color: rgba(black, 0.7);
+}
+
+@media only screen and (max-width: 3000px) {
+  .gamecardContainer {
+    min-height: 60vh;
+    width: 40vh;
+  }
+  .title {
+    padding: 0.2em 0 1.5em;
+  }
+  .bottom {
+    padding: 0.2em 0 2.5em;
+  }
+  .title span {
+    font-size: 1.8rem;
+    top: 0%;
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .gamecardContainer {
+    min-height: 55vh;
+    width: 32vh;
+  }
+  .title {
+    padding: 0.2em 0 1.4em;
+  }
+  .bottom {
+    padding: 0.2em 0 2em;
+  }
+  .title span {
+    font-size: 1.5rem;
+    top: -5%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .gamecardContainer {
+    min-height: 50vh;
+    width: 28vh;
+  }
+  .title {
+    padding: 0.2em 0 1.4em;
+  }
+  .bottom {
+    padding: 0.2em 0 1.8em;
+  }
+  .title span {
+    font-size: 1.2rem;
+    top: -5%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .gamecardContainer {
+    min-height: 35vh;
+    width: 30vh;
+    margin: 1em; 
+  }
+  .title {
+    padding: 0.2em 0 1.3em;
+  }
+  .bottom {
+    padding: 0.1em 0 1.4em;
+  }
+  .title span {
+    font-size: 0.9rem;
+    top: -5%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .gamecardContainer {
+    min-height: 32vh;
+    width: 25vh;
+    margin: 1.2em; 
+  }
+  .title {
+    padding: 0.2em 0 1.1em;
+  }
+  .bottom {
+    padding: 0.1em 0 1.4em;
+  }
+  .title span {
+    font-size: 0.8rem;
+    top: -5%;
+  }
 }
