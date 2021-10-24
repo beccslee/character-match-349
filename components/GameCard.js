@@ -1,10 +1,10 @@
 import styles from "../styles/GameCard.module.css";
 
-function GameCard() {
+function GameCard({characterName, imgSrc}) {
 	return (
-		<div className={styles.gamecardContainer}>
+		<div className={styles.gamecardContainer} style={{"background-image": `(${imgSrc})`}}>
 			<h1 className={styles.title}>
-				<span>THIS IS A TEST SENTENCE yes</span>
+				<span>{characterName}</span>
 			</h1>
 			<footer className={styles.bottom}></footer>
 		</div>

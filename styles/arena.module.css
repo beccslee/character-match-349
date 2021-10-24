@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:400i);
 
 .arenaContainer {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("http://djlittlematt.com/wp-content/uploads/2017/09/bg-black-brick.jpg");
@@ -16,15 +16,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 3em;
 }
 
 .backButton {
   position: absolute;
-  color: #860000;
+  color: #08004e;
   background: transparent;
-  border: 2px solid #860000;
-  text-shadow: 0 0 2px #d42626, 0 0 3px #c90d0d;
-  box-shadow: 0 0 5px #d42626, 0 0 7px #c90d0d, 0 0 8px #dd0000;
+  border: 2px solid #0b003a;
+  text-shadow: 0 0 2px #040035, 0 0 3px #080050;
+  box-shadow: 0 0 5px #100057, 0 0 7px #25008a, 0 0 8px #001679;
   border-radius: 50%;
   font-size: 2.6rem;
   height: 3rem;
@@ -39,8 +40,8 @@
 }
 
 .backButton:hover {
-  text-shadow: 0 0 1px #d42626, 0 0 1px #c90d0d;
-  box-shadow: 0 0 3px #d42626, 0 0 4px #c90d0d, 0 0 5px #dd0000;
+  text-shadow: 0 0 1px #000550, 0 0 1px #001069;
+  box-shadow: 0 0 3px #060061, 0 0 4px #00014e, 0 0 5px #001068;
 }
 
 .arenaHeader {
@@ -71,6 +72,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  width: 85%;
+  margin: auto;
 }
 
 @media only screen and (max-width: 900px) {
@@ -278,5 +281,27 @@
   82% {
     text-shadow: 0 0 7px #5fdfff, 0 0 10px #cbfaff, 0 0 15px #53ddff;
     opacity: 0.98;
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .backButton {
+    width: 2rem;
+    height: 2rem;
+  }
+  .arenaHeader {
+    font-size: 4.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .backButton {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  
+  .arenaHeader {
+    font-size: 4rem;
   }
 }

@@ -15,20 +15,23 @@
 }
 
 .gamecardContainer {
-  border: solid red;
-  border-width: 0.1em;
-  background-image: url(https://i.imgur.com/YZHt8do.png);
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-size: cover;
+  background-size: 100% 100%;
+  background-position: center;
   margin: 0.5em; /* to change with media q. */
   min-height: 60vh; /* to change with media q. */
-  width: 40vh; /* to change with media q. */
+  width: 40vw; /* to change with media q. */
   font-weight: var(--fw-body);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
+}
+
+.gamecardContainer:hover {
+  outline: 0.085em solid #acacac;
 }
 
 .title,
@@ -118,8 +121,8 @@
 
 @media only screen and (max-width: 1300px) {
   .gamecardContainer {
-    min-height: 50vh;
-    width: 28vh;
+    min-height: 55vh;
+    width: 35vh;
   }
   .title {
     padding: 0.2em 0 1.4em;
@@ -128,15 +131,15 @@
     padding: 0.2em 0 1.8em;
   }
   .title span {
-    font-size: 1.2rem;
+    font-size: 2.1rem;
     top: -5%;
   }
 }
 
 @media only screen and (max-width: 900px) {
   .gamecardContainer {
-    min-height: 35vh;
-    width: 30vh;
+    min-height: 37vh;
+    width: 35vh;
     margin: 1em; 
   }
   .title {
