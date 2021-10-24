@@ -2,7 +2,7 @@ import styles from "../styles/GameCard.module.css";
 
 function GameCard({characterName, imgSrc}) {
 	return (
-		<div className={styles.gamecardContainer} style={{"background-image": `(${imgSrc})`}}>
+		<div className={styles.gamecardContainer} style={{backgroundImage: `url(${imgSrc})`}}>
 			<h1 className={styles.title}>
 				<span>{characterName}</span>
 			</h1>

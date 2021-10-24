@@ -19,7 +19,7 @@ export default function Arena() {
 			</div>
 			<div className={styles.GameCards}>
 				<GameCard characterName="Mario" imgSrc="../images/Mario.png"/>
-				<GameCard characterName="Spyro" imgSrc="../images/Spyro.jpg"/>
+				<GameCard characterName="Sonic" imgSrc="../images/Sonic.png"/>
 			</div>
 		</div>
 	);
