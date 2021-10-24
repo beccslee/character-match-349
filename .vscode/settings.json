@@ -1,7 +1,7 @@
 {
-	"editor.tabSize": 4,
+	"editor.tabSize": 2,
 	"[javascript]": {
-		"editor.tabSize": 4
+		"editor.tabSize": 2
 	},
 	"[json]": {
 		"editor.tabSize": 2
