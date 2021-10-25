@@ -1,9 +1,9 @@
-import styles from '../styles/Form.module.css';
+import styles from "../styles/Form.module.css";
 
 function Form() {
 	const update = () => {
-		let filePath = document.getElementById('characterImg').files[0].name;
-		document.getElementById('fileSelected').textContent = filePath;
+		let filePath = document.getElementById("characterImg").files[0].name;
+		document.getElementById("fileSelected").textContent = filePath;
 	};
 
 	return (
@@ -26,7 +26,11 @@ function Form() {
 				<label className={styles.formLabel}>
 					Upload an image of your character
 				</label>
-				<label htmlFor="characterImg" className={styles.specialLabel} required>
+				<label
+					htmlFor="characterImg"
+					className={styles.specialLabel}
+					required
+				>
 					Upload a file
 				</label>
 				<input

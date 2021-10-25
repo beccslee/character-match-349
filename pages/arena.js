@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import styles from "../styles/arena.module.css";
 import GameCard from "../components/GameCard";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
@@ -9,7 +9,10 @@ export default function Arena() {
 	return (
 		<div className={styles.arenaContainer}>
 			<div className={styles.headingContainer}>
-				<button className={styles.backButton} onClick={() => router.push('/')}>
+				<button
+					className={styles.backButton}
+					onClick={() => router.push("/")}
+				>
 					<i className="fa fa-arrow-left"></i>
 				</button>
 				<h1 className={styles.arenaHeader}>
@@ -17,9 +20,16 @@ export default function Arena() {
 					<span className={styles.letter2}>A</span>
 				</h1>
 			</div>
+			<div></div>
 			<div className={styles.GameCards}>
-				<GameCard characterName="Mario" imgSrc="../images/Mario.png"/>
-				<GameCard characterName="Sonic" imgSrc="../images/Sonic.png"/>
+				<GameCard
+					characterName="Mario the italian"
+					imgSrc="../images/Mario.png"
+				/>
+				<GameCard
+					characterName="Sonic the hedgehog"
+					imgSrc="../images/Sonic.png"
+				/>
 			</div>
 		</div>
 	);
