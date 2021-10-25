@@ -23,11 +23,11 @@ export default function Arena() {
 			<div></div>
 			<div className={styles.GameCards}>
 				<GameCard
-					characterName="Mario the italian"
+					characterName="Mario"
 					imgSrc="../images/Mario.png"
 				/>
 				<GameCard
-					characterName="Sonic the hedgehog"
+					characterName="Sonic"
 					imgSrc="../images/Sonic.png"
 				/>
 			</div>
