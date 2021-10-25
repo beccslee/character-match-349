@@ -1,0 +1,66 @@
+.votesContainer {
+    width: 20%;
+    text-align: center;
+    color: #e9f9ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px #fff,0px 0px 9px #dadada;
+    padding: 1em 0.5em;
+}
+
+.votesHeader {
+    font-size: 1.85rem;
+    text-decoration: underline;
+    margin-bottom: 0.25em;
+    text-shadow: 0px 0px 2px #fff, 0px 0px 2px #dadada;
+}
+
+.vote {
+    width: 100%;
+    margin-bottom: 0.55em;
+    color: #5e5eff;
+    text-shadow: 0px 0px 3px #0054f0, 0px 0px 4px #2414db;
+    font-size: 1.15rem;
+}
+
+.vote:first-of-type {
+    color: #ff3232;
+    text-shadow: 0px 0px 3px #a00000, 0px 0px 4px #a70000;
+}
+
+.characterBar1 {
+    margin-top: 0.25em;
+    background:#ff3232;
+    height: 1.75em;
+    align-self: flex-start;
+    box-shadow: 0px 0px 5px #a00000, 0px 0px 7px #a70000;
+}
+
+.characterBar2 {
+    background: #5e5eff;
+    height: 1.75em;
+    align-self: flex-start;
+    box-shadow: 0px 0px 5px #0054f0, 0px 0px 7px #2414db;
+}
+
+.nextMatch {
+    color: #fcff3a;
+    background: transparent;
+    border: 2px solid #fcff3a;
+    font-size: 1.4rem;
+    text-shadow: 0px 0px 2px #fdff91, 0px 0px 3px #fdff91;
+    box-shadow: 0px 0px 3px #fdff91, 0px 0px 4px #fdff91;
+    border-radius: 5px;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    margin-top: 1.25em;
+}
+
+.nextMatch:hover, .nextMatch:active {
+    text-shadow: 0px 0px 1px #fdff91, 0px 0px 2px #fdff91;
+    box-shadow: 0px 0px 2px #fdff91, 0px 0px 3px #fdff91;
+}

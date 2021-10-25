@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import styles from "../styles/arena.module.css";
 import GameCard from "../components/GameCard";
+import Votes from "../components/Votes";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 
 export default function Arena() {
@@ -26,6 +27,7 @@ export default function Arena() {
 					characterName="Mario"
 					imgSrc="../images/Mario.png"
 				/>
+				<Votes characterName1="Mario" characterName2="Sonic" voted="1"/>
 				<GameCard
 					characterName="Sonic"
 					imgSrc="../images/Sonic.png"
