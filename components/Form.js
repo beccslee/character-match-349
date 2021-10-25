@@ -1,10 +1,24 @@
 import styles from "../styles/Form.module.css";
 
 function Form() {
-	const update = () => {
-		let filePath = document.getElementById("characterImg").files[0].name;
-		document.getElementById("fileSelected").textContent = filePath;
+	/* Dimensions validation (WIP)
+	const checkDimensions = () => {
+		let url = document.getElementById("characterImg").value;
+		let imgWidth = 0;
+		let imgHeight = 0;
+		const img = new Image();
+    	img.addEventListener("load", function() {
+			imgWidth = this.naturalWidth;
+			imgHeight = this.naturalHeight;
+    	});
+    	img.src = url;
+
+		if ((imgWidth < 250) || (imgWidth > 900) || (imgHeight < 400) || (imgHeight > 720)) {
+			alert(imgWidth);
+			alert(imgHeight);
+		}
 	};
+	*/
 
 	return (
 		<div className={styles.formContainer}>
@@ -16,40 +30,33 @@ function Form() {
 					type="text"
 					id="characterName"
 					name="characterName"
-					className={styles.characterNameInput}
+					className={styles.boxInput}
 					placeholder="E.g. James T. Kirk"
 					size="30"
 					maxLength="40"
 					required
 				/>
 				<br />
-				<label className={styles.formLabel}>
-					Upload an image of your character
-				</label>
-				<label
-					htmlFor="characterImg"
-					className={styles.specialLabel}
-					required
-				>
-					Upload a file
+				<label htmlFor="characterImg" className={styles.formLabel}>
+					Enter an image URL of your character
 				</label>
 				<input
-					type="file"
+					type="url"
 					id="characterImg"
 					name="characterImg"
-					accept="image/*"
-					className={styles.imgSub}
-					onChange={update}
+					pattern="^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|jpeg|png)$"
+					placeholder="E.g. https://i.imgur.com/epMSRQH.png"
+					title="Please enter image URLs ending in .jpg, .jpeg, or .png"
+					className={styles.boxInput}
 					required
 				/>
-				<span id="fileSelected" className={styles.selectedFile}>
-					&nbsp;
-				</span>
-				<br />
+				<br/>
+				<br/>
 				<input
 					type="submit"
 					value="SUBMIT YOUR CHARACTER"
 					className={styles.characterSubmitButton}
+					// onSubmit={checkDimensions}
 				/>
 			</form>
 		</div>

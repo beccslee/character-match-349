@@ -14,7 +14,7 @@
   font-size: 1.25rem;
 }
 
-.characterNameInput {
+.boxInput {
   padding: 0.5em 0.75em;
   background-color: #404040;
   border: 1px solid #ffffff;
@@ -25,30 +25,6 @@
   margin-bottom: 0.15em;
 }
 
-.imgSub {
-  display: none;
-}
-
-.specialLabel {
-  background-color: #404040;
-  font-size: 1.025rem;
-  color: #ffffff;
-  padding: 0.55em 1.75em;
-  border: 2px solid #ffffff;
-  box-shadow: 2px 2px 2px #000000;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-bottom: 0.5em;
-}
-
-.specialLabel:hover {
-  background-color: #3a3a3a;
-}
-
-.selectedFile {
-  color: #ffffff;
-  font-size: 0.9rem;
-}
 
 .characterSubmitButton {
   margin: 0.15em 0;
