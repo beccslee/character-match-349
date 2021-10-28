@@ -10,7 +10,7 @@ class Form extends React.Component {
 			imgHeight: 0,
 			validUrl: false,
 			imgUrl: "",
-		}
+		};
 	}
 	
 	loadImg() {
@@ -18,7 +18,7 @@ class Form extends React.Component {
 		img.addEventListener("load", function() {
 			this.imgWidth = img.naturalWidth;
 			this.imgHeight = img.naturalHeight;
-		}.bind(this))
+		}.bind(this));
 		img.src = this.imgUrl;
 	}
 
@@ -26,9 +26,7 @@ class Form extends React.Component {
 		if ((this.imgWidth < 250) || (this.imgWidth > 900) || (this.imgHeight < 400) || (this.imgHeight > 720)) {
 			return false;
 		}
-		else {
-			return true;
-		}
+		return true;
 	}
 
 	render() {
@@ -70,7 +68,7 @@ class Form extends React.Component {
 						placeholder="E.g. Star Trek"
 						size="30"
 						maxLength="40"
-						autocomplete={"off"}
+						autoComplete={"off"}
 						required
 					/>
 					<br />
@@ -87,8 +85,8 @@ class Form extends React.Component {
 						className={styles.boxInput}
 						autoComplete={"off"}
 						ref={this.imgInputRef}
-						onChange={(evt) => {
-							if (this.imgInputRef.current.value.match("^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|jpeg|png)$") !== null) {
+						onChange={() => {
+							if (this.imgInputRef.current.value.match("^https?://(?:[a-z0-9-]+.)+[a-z]{2,6}(?:/[^/#?]+)+.(?:jpg|jpeg|png)$") !== null) {
 								this.imgUrl = this.imgInputRef.current.value;
 								this.loadImg();
 								

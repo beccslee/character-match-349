@@ -10,6 +10,7 @@
     "clean": "npx rimraf node_modules && npm install"
   },
   "dependencies": {
+    "firebase": "^9.2.0",
     "font-awesome": "^4.7.0",
     "next": "11.1.2",
     "react": "17.0.2",

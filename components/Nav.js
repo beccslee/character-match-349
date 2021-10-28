@@ -7,9 +7,9 @@ const nearestSectionIndex = (currPos, sectionPosArr, startIndex, endIndex) => {
 	if (startIndex === endIndex - 1) {
 		if (
 			Math.abs(
-				sectionPosArr[startIndex].sectionRef.current.offsetTop - currPos
+				sectionPosArr[startIndex]?.sectionRef?.current?.offsetTop - currPos
 			) <
-      Math.abs(sectionPosArr[endIndex].sectionRef.current.offsetTop - currPos)
+      Math.abs(sectionPosArr[endIndex]?.sectionRef?.current?.offsetTop - currPos)
 		) {
 			return startIndex;
 		} else {
@@ -18,10 +18,10 @@ const nearestSectionIndex = (currPos, sectionPosArr, startIndex, endIndex) => {
 	} else {
 		const nextNearest = Math.floor((startIndex + endIndex) / 2);
 		const a = Math.abs(
-			sectionPosArr[nextNearest].sectionRef.current.offsetTop - currPos
+			sectionPosArr[nextNearest]?.sectionRef?.current?.offsetTop - currPos
 		);
 		const b = Math.abs(
-			sectionPosArr[nextNearest + 1].sectionRef.current.offsetTop - currPos
+			sectionPosArr[nextNearest + 1]?.sectionRef?.current?.offsetTop - currPos
 		);
 		if (a < b) {
 			return nearestSectionIndex(
