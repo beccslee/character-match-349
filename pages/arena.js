@@ -1,6 +1,7 @@
+import { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
-// import { collection, doc } from 'firebase/firestore';
-// import { db } from '../firebase.config';
+import { collection, getDocs, setDoc } from 'firebase/firestore';
+import db from '../firebase.config';
 import styles from "../styles/arena.module.css";
 import GameCard from "../components/GameCard";
 import Votes from "../components/Votes";
@@ -10,6 +11,35 @@ import "../node_modules/font-awesome/css/font-awesome.min.css";
 
 export default function Arena() {
 	const router = useRouter();
+	const [character1, setCharacter1] = useState('');
+	const [character2, setCharacter2] = useState('');
+	const [character1Votes, setCharacter1Votes] = useState(null);
+	const [character2Votes, setCharacter2Votes] = useState(null);
+	const [charactersCollection, setCharactersCollection] = useState([]);
+
+	const generateRandomCharacters = () => Math.floor(Math.random() * charactersCollection.length);
+
+	useEffect(() => {
+		let characters = [];
+		const fetchCollection = async() => {
+			try {
+				await getDocs(collection(db, "characters")).then(snapshot => {
+					snapshot.docs.forEach(doc => {
+						let id = doc.id;
+						let data = {...doc.data(), ['id']: id };
+						characters.push(data);
+					});
+				});
+				setCharactersCollection([...characters]);
+
+			} catch(err) {
+				// eslint-disable-next-line no-console
+				console.error(err);
+			}
+		};
+
+		fetchCollection();
+	}, []);
 
 	// console.log('firestore db ', charactersRef);
 
