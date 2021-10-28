@@ -59,6 +59,21 @@ class Form extends React.Component {
 						required
 					/>
 					<br />
+					<label htmlFor="characterFranchise" className={styles.formLabel}>
+						Character Franchise
+					</label>
+					<input
+						type="text"
+						id="characterFranchise"
+						name="characterFranchise"
+						className={styles.boxInput}
+						placeholder="E.g. Star Trek"
+						size="30"
+						maxLength="40"
+						autocomplete={"off"}
+						required
+					/>
+					<br />
 					<label htmlFor="characterImg" className={styles.formLabel}>
 						Enter an image URL of your character
 					</label>
