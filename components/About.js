@@ -10,7 +10,7 @@ function About({ id }) {
 				<fieldset className={styles.projectDetailsContainer}>
 					<legend className={styles.detailsHeading}>Project Details</legend>
 					<p className={styles.projectDetailsText}>
-						Welcome to "Who Would Win"! This is a fun web application created by Team Barry, which features the ability for you to vote on your favorite characters from your favorite franchises as they are put up against one another. We currently hold a multitude of default characters from various games and movies, but we allow our dear users to submit characters that they love as well. Once they are submitted, they'll be added to our database of characters, and in due time they'll have their moment to duke it out with another random character of our database, and you can vote on who you think would win! In addition to this, you can also see how other players have voted on particular matchups as well. Don't hesitate and feel free to click the "Play Now" button above to let the action begin! 
+						Welcome to "Who Would Win"! This is a fun application where you can see your wildest character brawl scenarios come to life! Got a favorite movie, video game, TV show, or novel character in mind? Submit them to our database and have them enter the arena. Want to see what we have to offer? Feel free to click the "Play Now" button and participate in the action. In our game room you'll be able to see randomly-generated matchups of characters from your favorite franchises. There, you can vote on who you think would win in an epic (or even hysterical) battle of the ages! Cast your vote and see how others have voted too, and have a great time!
 					</p>
 				</fieldset>
 

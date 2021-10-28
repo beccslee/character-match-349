@@ -35,7 +35,11 @@
   box-shadow: 2px 2px 2px #000000;
   background-color: #202020;
   color: #ffffff;
-  padding: 0.55em;
+  padding: 0.65em;
+}
+
+.projectDetailsText {
+    text-indent: 1em;
 }
 
 .teamDetailsContainer {
