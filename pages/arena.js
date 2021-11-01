@@ -1,11 +1,17 @@
 import { useRouter } from "next/router";
+// import { collection, doc } from 'firebase/firestore';
+// import { db } from '../firebase.config';
 import styles from "../styles/arena.module.css";
 import GameCard from "../components/GameCard";
 import Votes from "../components/Votes";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 
+// const charactersRef = collection(db, "characters");
+
 export default function Arena() {
 	const router = useRouter();
+
+	// console.log('firestore db ', charactersRef);
 
 	return (
 		<div className={styles.arenaContainer}>
