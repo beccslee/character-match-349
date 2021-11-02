@@ -7,9 +7,6 @@ function Votes({characterName1, characterName2, voted}) {
     let char1Ratio = char1Votes / totalVotes;
     let char2Ratio = char2Votes / totalVotes;
 
-    console.log(char1Ratio);
-    console.log(char2Ratio);
-
 	return (
         <div className={styles.votesContainer} style={{display: `${voted === "1" ? "flex" : "none"}`}}>
             <h2 className={styles.votesHeader}>Current Votes</h2>
@@ -21,7 +18,7 @@ function Votes({characterName1, characterName2, voted}) {
             </div>
             <div className={styles.characterBar1} style={{width: `${char1Ratio * 100}%`}}></div>
             <div className={styles.characterBar2} style={{width: `${char2Ratio * 100}%`}}></div>
-            <button className={styles.nextMatch}>Next Match</button>
+            {/* <button className={styles.nextMatch}>Next Match</button> */}
         </div>
 	);
 }

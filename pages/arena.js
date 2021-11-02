@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from "next/router";
 import { collection, getDocs, setDoc } from 'firebase/firestore';
 import db from '../firebase.config';
@@ -7,20 +7,52 @@ import GameCard from "../components/GameCard";
 import Votes from "../components/Votes";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 
-// const charactersRef = collection(db, "characters");
+let character1;
+let character2;
+let match;
 
 export default function Arena() {
 	const router = useRouter();
-	const [character1, setCharacter1] = useState('');
-	const [character2, setCharacter2] = useState('');
-	const [character1Votes, setCharacter1Votes] = useState(null);
-	const [character2Votes, setCharacter2Votes] = useState(null);
+	const [didClickNextMatch, setDidClickNextMatch] = useState(false);
 	const [charactersCollection, setCharactersCollection] = useState([]);
+	const [matchesCollection, setMatchesCollection] = useState([]);
 
 	const generateRandomCharacters = () => Math.floor(Math.random() * charactersCollection.length);
 
+	const generateMatch = () => {
+		let char1;
+		let char2;
+		char1 = generateRandomCharacters();
+		char2 = generateRandomCharacters();
+		if (char1 === char2) {
+			// Regenerate a player if same
+			char2 = generateRandomCharacters();
+		}
+		character1 = charactersCollection[char1];
+		character2 = charactersCollection[char2];
+
+		matchesCollection.forEach(doc => {
+			if ((doc.name1 === character1.name || doc.name1 === character2.name) &&
+			(doc.name2 === character1.name || doc.name2 === character2.name)) {
+				match = doc;
+			} else {
+				// Add logic for sending this new match information up to firestore
+				match = {
+					'id1': character1?.id,
+					'id2': character2?.id,
+					'name1': character1?.name,
+					'name2': character2?.name,
+					'votes1': 0,
+					'votes2': 0,
+				};
+			}
+		});
+		console.log('MATCH 11111 ', match);
+	};
+
 	useEffect(() => {
 		let characters = [];
+		let matches = [];
 		const fetchCollection = async() => {
 			try {
 				await getDocs(collection(db, "characters")).then(snapshot => {
@@ -30,16 +62,46 @@ export default function Arena() {
 						characters.push(data);
 					});
 				});
-				setCharactersCollection([...characters]);
+				
+				await getDocs(collection(db, 'matches')).then(snapshot => {
+					snapshot.docs.forEach(doc => {
+						const matchData = {...doc.data(), ['matchId']: doc.id };
+						matches.push(matchData);
+					});
+				});
 
+				setCharactersCollection([...characters]);
+				setMatchesCollection([...matches]);
 			} catch(err) {
 				// eslint-disable-next-line no-console
 				console.error(err);
 			}
 		};
+		
+		if (didClickNextMatch) {
+			document.addEventListener('click', generateMatch);
+			setDidClickNextMatch(false);
+			return () => {
+				document.removeEventListener('click', generateMatch);
+			};
+		} else {
+			document.removeEventListener('click', generateMatch);
+		}
 
 		fetchCollection();
-	}, []);
+	}, [didClickNextMatch]);
+
+	// possibly useRef for matches variable to keep track of current match up information and reduce re-renders
+	if (charactersCollection.length > 0 && matchesCollection.length > 0) {
+		console.log('GENERATE MATCH ONLY WITH LENGTH ');
+		generateMatch();
+	}
+
+	const buttonHandler = () => {
+		setDidClickNextMatch(true);
+	};
+
+	console.log('RENDERRRRRRR ---------------------');
 
 	// console.log('firestore db ', charactersRef);
 
@@ -60,13 +122,16 @@ export default function Arena() {
 			<div></div>
 			<div className={styles.GameCards}>
 				<GameCard
-					characterName="Mario"
-					imgSrc="../images/Mario.png"
+					characterName={`${character1?.name}`}
+					imgSrc={`${character1?.image}`}
 				/>
-				<Votes characterName1="Mario" characterName2="Sonic" voted="1"/>
+				<Votes characterName1={`${match?.name1}`} characterName2={`${match?.name2}`} voted="1"/>
+				<div>
+					<button className={styles.nextMatch} onClick={buttonHandler}>Next Match</button>
+				</div>
 				<GameCard
-					characterName="Sonic"
-					imgSrc="../images/Sonic.png"
+					characterName={`${character2?.name}`}
+					imgSrc={`${character2?.image}`}
 				/>
 			</div>
 		</div>
