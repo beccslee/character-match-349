@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import { collection, getDocs, setDoc } from 'firebase/firestore';
 import db from '../firebase.config';
@@ -12,7 +12,6 @@ let character2;
 let match;
 
 export default function Arena() {
-	console.log('arena');
 	const router = useRouter();
 	const [didClickNextMatch, setDidClickNextMatch] = useState(false);
 	const [charactersCollection, setCharactersCollection] = useState([]);
@@ -22,7 +21,6 @@ export default function Arena() {
 	const generateRandomCharacters = () => Math.floor(Math.random() * charactersCollection.length);
 
 	const generateMatch = () => {
-		console.log('generateMatch');
 		let char1;
 		let char2;
 		char1 = generateRandomCharacters();
@@ -50,16 +48,12 @@ export default function Arena() {
 				};
 			}
 		});
-		console.log('MATCH 11111 ', match);
 	};
 
 	useEffect(() => {
-		console.log('useEffect()');
-
 		let characters = [];
 		let matches = [];
 		const fetchCollection = async() => {
-			console.log('fetchCollection');
 			try {
 				await getDocs(collection(db, "characters")).then(snapshot => {
 					snapshot.docs.forEach(doc => {
@@ -86,10 +80,8 @@ export default function Arena() {
 		
 		console.log('didClickNextMatch:',didClickNextMatch);
 		if (didClickNextMatch) {
-			// setDidClickNextMatch(false);
 			document.addEventListener('click', generateMatch);
 			setDidClickNextMatch(false);
-			// console.log(didClickNextMatch);
 			return () => {
 				document.removeEventListener('click', generateMatch);
 			};
@@ -102,7 +94,6 @@ export default function Arena() {
 
 	// possibly useRef for matches variable to keep track of current match up information and reduce re-renders
 	if (charactersCollection.length > 0 && matchesCollection.length > 0 && (didClickNextMatch || !generateOnMount)) {
-		// console.log('GENERATE MATCH ONLY WITH LENGTH');
 		if(!generateOnMount) {
 			setGenerateOnMount(true);
 		}
@@ -110,13 +101,10 @@ export default function Arena() {
 	}
 
 	const buttonHandler = () => {
-		console.log(`- CLICK -`);
 		setDidClickNextMatch(true);
 	};
 
 	console.log('RENDERRRRRRR ---------------------');
-
-	// console.log('firestore db ', charactersRef);
 
 	return (
 		<div className={styles.arenaContainer}>
@@ -138,7 +126,13 @@ export default function Arena() {
 					characterName={`${character1?.name}`}
 					imgSrc={`${character1?.image}`}
 				/>
-				<Votes characterName1={`${match?.name1}`} characterName2={`${match?.name2}`} voted="1"/>
+				<Votes
+					characterName1={`${match?.name1}`}
+					characterName2={`${match?.name2}`}
+					characterVotes1={`${match?.votes1}`}
+					characterVotes2={`${match?.votes2}`}
+					voted="1"
+				/>
 				<div>
 					<button className={styles.nextMatch} onClick={buttonHandler}>Next Match</button>
 				</div>
