@@ -24,6 +24,7 @@ export default function Arena() {
 	const generateMatch = () => {
 		let char1;
 		let char2;
+		let doesMatchExist = false;
 		char1 = generateRandomCharacters();
 		char2 = generateRandomCharacters();
 		while (char1 === char2) {
@@ -36,19 +37,22 @@ export default function Arena() {
 		matchesCollection.forEach(doc => {
 			if ((doc.name1 === character1.name || doc.name1 === character2.name) &&
 			(doc.name2 === character1.name || doc.name2 === character2.name)) {
+				// console.log('MATCH EXISTS ', doc);
 				match = doc;
-			} else {
-				// Add logic for sending this new match information up to firestore
-				match = {
-					'id1': character1?.id,
-					'id2': character2?.id,
-					'name1': character1?.name,
-					'name2': character2?.name,
-					'votes1': 0,
-					'votes2': 0,
-				};
+				doesMatchExist = true;
 			}
 		});
+		// return here if match found in collection
+		if (doesMatchExist) return;
+		// else continue here to create new match object when not found
+		match = {
+			'id1': character1?.id,
+			'id2': character2?.id,
+			'name1': character1?.name,
+			'name2': character2?.name,
+			'votes1': 0,
+			'votes2': 0,
+		};
 	};
 
 	const upVote = (vote) => {
@@ -127,8 +131,6 @@ export default function Arena() {
 	const buttonHandler = () => {
 		setDidClickNextMatch(true);
 	};
-
-	// console.log('RENDERRRRRRR ---------------------');
 
 	return (
 		<div className={styles.arenaContainer}>
