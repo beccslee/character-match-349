@@ -8,18 +8,11 @@
 	align-items: center;
 }
 
-.gamecardContainer {
-	margin: 1em;
-	border-width: 4px;
-	border-style: solid;
-	border-image: linear-gradient(to right, #743ad5, #5fdfff) 1;
-}
-
 .nameArea {
 	font-style: italic;
 	font-family: "Open Sans", Impact;
 	text-align: center;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color: #fff;
 	letter-spacing: 1px;
 	font-weight: 700;

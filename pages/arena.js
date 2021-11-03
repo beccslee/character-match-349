@@ -156,14 +156,16 @@ export default function Arena() {
 						imgSrc={`${character1?.image}`}
 					/>
 				</button>
-				<Votes
-					characterName1={`${match?.name1}`}
-					characterName2={`${match?.name2}`}
-					characterVotes1={`${match?.votes1}`}
-					characterVotes2={`${match?.votes2}`}
-				/>
-				<div>
-					<button className={styles.nextMatch} onClick={buttonHandler}>Next Match</button>
+				<div className={styles.votesNextContainer}>
+					<Votes
+						characterName1={`${match?.name1}`}
+						characterName2={`${match?.name2}`}
+						characterVotes1={`${match?.votes1}`}
+						characterVotes2={`${match?.votes2}`}
+					/>
+					<div>
+						<button className={styles.nextMatch} onClick={buttonHandler}>Next Match</button>
+					</div>
 				</div>
 				<button
 					onClick={() => upVote(2)}

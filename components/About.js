@@ -18,17 +18,17 @@ function About({ id }) {
 					<legend className={styles.detailsHeading}>Meet the Team</legend>
 					<p className={styles.teamMember}>
 						<strong>Stephen Landaas</strong> - Team Leader, UI Design, HTML,
-						CSS, React Setup
+						CSS, React
 					</p>
 					<p className={styles.teamMember}>
-						<strong>Rebecca Lee</strong> - JavaScript, React Integration, CSS
+						<strong>Rebecca Lee</strong> - JavaScript, React, CSS
 					</p>
 					<p className={styles.teamMember}>
-						<strong>Ali Hussain</strong> - HTML, CSS, JavaScript
+						<strong>Ali Hussain</strong> - HTML, CSS
 					</p>
 					<p className={styles.teamMember}>
 						<strong>Ethan Kamus</strong> - Database Management , Google
-						Firestore, JavaScript
+						Firestore, React, JavaScript
 					</p>
 				</fieldset>
 			</div>

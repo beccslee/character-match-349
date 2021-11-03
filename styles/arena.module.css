@@ -78,12 +78,12 @@
 }
 
 .nextMatch {
-  color: #fcff3a;
+  color: #fbff28;
   background: transparent;
   border: 2px solid #fcff3a;
-  font-size: 1.4rem;
-  text-shadow: 0px 0px 2px #fdff91, 0px 0px 3px #fdff91;
-  box-shadow: 0px 0px 3px #fdff91, 0px 0px 4px #fdff91;
+  font-size: 1.6rem;
+  text-shadow: 0px 0px 2px #fbff27, 0px 0px 3px #fdff91;
+  box-shadow: 0px 0px 3px #fbff1c, 0px 0px 4px #fdff91;
   border-radius: 5px;
   padding: 0.25em 0.5em;
   cursor: pointer;
@@ -93,6 +93,19 @@
 .nextMatch:hover, .nextMatch:active {
   text-shadow: 0px 0px 1px #fdff91, 0px 0px 2px #fdff91;
   box-shadow: 0px 0px 2px #fdff91, 0px 0px 3px #fdff91;
+}
+
+.GameCards button {
+  background: transparent;
+  border: none;
+}
+
+.votesNextContainer {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 900px) {
@@ -312,6 +325,10 @@
   .arenaHeader {
     font-size: 4.5rem;
   }
+  .votesNextContainer {
+    width: 55%;
+    margin-bottom: 2em;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -322,5 +339,9 @@
   
   .arenaHeader {
     font-size: 4rem;
+  }
+  .votesNextContainer {
+    width: 60%;
+    margin-bottom: 2em;
   }
 }

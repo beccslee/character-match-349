@@ -41,6 +41,15 @@ class Form extends React.Component {
 		return true;
 	}
 
+	clearInputs() {
+		this.charnameInputRef.current.value = "";
+		this.charfranchInputRef.current.value = "";
+		this.imgInputRef.current.value = "";
+		this.imgUrl = "";
+		this.charName = "";
+		this.charFranch = "";
+	}
+
 	async sendToFirestore() {
 		await addDoc(this.dbRef, {
 			name: this.charname,
@@ -55,9 +64,10 @@ class Form extends React.Component {
 				<form className={styles.form} ref={this.formRef} onSubmit = {(e) => {
 					console.log(this.dimsValid());
 					if (this.dimsValid()) {
-						// e.preventDefault();
+						e.preventDefault();
 						console.log("Image valid!");
 						this.sendToFirestore(); //send character info to firestore
+						this.clearInputs();
 					}
 					else {
 						e.preventDefault();

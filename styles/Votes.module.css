@@ -1,5 +1,5 @@
 .votesContainer {
-    width: 20%;
+    width: 100%;
     text-align: center;
     color: #e9f9ff;
     display: flex;
@@ -32,12 +32,18 @@
     text-shadow: 0px 0px 3px #a00000, 0px 0px 4px #a70000;
 }
 
+
+.barsContainer {
+    width: 100%;
+}
+
 .characterBar1 {
     margin-top: 0.25em;
     background:#ff3232;
     height: 1.75em;
     align-self: flex-start;
     box-shadow: 0px 0px 5px #a00000, 0px 0px 7px #a70000;
+    transition: width 1s;
 }
 
 .characterBar2 {
@@ -45,17 +51,18 @@
     height: 1.75em;
     align-self: flex-start;
     box-shadow: 0px 0px 5px #0054f0, 0px 0px 7px #2414db;
+    transition: width 1s;
 }
 
 @media only screen and (max-width: 900px) {
     .votesContainer {
         margin: 2em 0;
-        width: 45%;
+        width: 100%;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .votesContainer {
-        width: 50%;
+        width: 100%;
     }
 }
