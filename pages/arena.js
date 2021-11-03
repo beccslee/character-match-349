@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
-import { collection, getDocs, setDoc } from 'firebase/firestore';
+import { collection, getDocs, setDoc, doc} from 'firebase/firestore';
 import db from '../firebase.config';
 import styles from "../styles/arena.module.css";
 import GameCard from "../components/GameCard";
@@ -17,6 +17,7 @@ export default function Arena() {
 	const [charactersCollection, setCharactersCollection] = useState([]);
 	const [matchesCollection, setMatchesCollection] = useState([]);
 	const [generateOnMount, setGenerateOnMount] = useState(false);
+	const [characterVoted, setCharacterVoted] = useState(false);
 
 	const generateRandomCharacters = () => Math.floor(Math.random() * charactersCollection.length);
 
@@ -50,6 +51,26 @@ export default function Arena() {
 		});
 	};
 
+	const upVote = (vote) => {
+		if(!characterVoted) {
+			if(vote === 1) {
+				match = {...match, ['votes1']:match?.votes1+1};
+			} else {
+				match = {...match, ['votes2']:match?.votes2+1};
+			}
+
+			// firestore stuff
+			if(match?.id) {
+				//setDoc
+				setDoc(doc(db, 'matches', match.id), {...match});
+			} else {
+				//addDoc
+				setDoc(doc(db, 'matches', `${match.name1.trim()}vs${match.name2.trim()}`), {...match});
+			}
+		}
+		setCharacterVoted(true);
+	};
+
 	useEffect(() => {
 		let characters = [];
 		let matches = [];
@@ -78,7 +99,7 @@ export default function Arena() {
 			}
 		};
 		
-		console.log('didClickNextMatch:',didClickNextMatch);
+		// console.log('didClickNextMatch:',didClickNextMatch);
 		if (didClickNextMatch) {
 			document.addEventListener('click', generateMatch);
 			setDidClickNextMatch(false);
@@ -89,6 +110,9 @@ export default function Arena() {
 			document.removeEventListener('click', generateMatch);
 		}
 
+		if(characterVoted) {
+			setCharacterVoted(false);
+		}
 		fetchCollection();
 	}, [didClickNextMatch]);
 
@@ -104,7 +128,7 @@ export default function Arena() {
 		setDidClickNextMatch(true);
 	};
 
-	console.log('RENDERRRRRRR ---------------------');
+	// console.log('RENDERRRRRRR ---------------------');
 
 	return (
 		<div className={styles.arenaContainer}>
@@ -122,24 +146,31 @@ export default function Arena() {
 			</div>
 			<div></div>
 			<div className={styles.GameCards}>
-				<GameCard
-					characterName={`${character1?.name}`}
-					imgSrc={`${character1?.image}`}
-				/>
+				<button
+					onClick={() => upVote(1)}
+				>
+					<GameCard
+						characterName={`${character1?.name}`}
+						imgSrc={`${character1?.image}`}
+					/>
+				</button>
 				<Votes
 					characterName1={`${match?.name1}`}
 					characterName2={`${match?.name2}`}
 					characterVotes1={`${match?.votes1}`}
 					characterVotes2={`${match?.votes2}`}
-					voted="1"
 				/>
 				<div>
 					<button className={styles.nextMatch} onClick={buttonHandler}>Next Match</button>
 				</div>
-				<GameCard
-					characterName={`${character2?.name}`}
-					imgSrc={`${character2?.image}`}
-				/>
+				<button
+					onClick={() => upVote(2)}
+				>
+					<GameCard
+						characterName={`${character2?.name}`}
+						imgSrc={`${character2?.image}`}
+					/>
+				</button>
 			</div>
 		</div>
 	); //end of return
