@@ -12,19 +12,22 @@ let character2;
 let match;
 
 export default function Arena() {
+	console.log('arena');
 	const router = useRouter();
 	const [didClickNextMatch, setDidClickNextMatch] = useState(false);
 	const [charactersCollection, setCharactersCollection] = useState([]);
 	const [matchesCollection, setMatchesCollection] = useState([]);
+	const [generateOnMount, setGenerateOnMount] = useState(false);
 
 	const generateRandomCharacters = () => Math.floor(Math.random() * charactersCollection.length);
 
 	const generateMatch = () => {
+		console.log('generateMatch');
 		let char1;
 		let char2;
 		char1 = generateRandomCharacters();
 		char2 = generateRandomCharacters();
-		if (char1 === char2) {
+		while (char1 === char2) {
 			// Regenerate a player if same
 			char2 = generateRandomCharacters();
 		}
@@ -51,9 +54,12 @@ export default function Arena() {
 	};
 
 	useEffect(() => {
+		console.log('useEffect()');
+
 		let characters = [];
 		let matches = [];
 		const fetchCollection = async() => {
+			console.log('fetchCollection');
 			try {
 				await getDocs(collection(db, "characters")).then(snapshot => {
 					snapshot.docs.forEach(doc => {
@@ -78,9 +84,12 @@ export default function Arena() {
 			}
 		};
 		
+		console.log('didClickNextMatch:',didClickNextMatch);
 		if (didClickNextMatch) {
+			// setDidClickNextMatch(false);
 			document.addEventListener('click', generateMatch);
 			setDidClickNextMatch(false);
+			// console.log(didClickNextMatch);
 			return () => {
 				document.removeEventListener('click', generateMatch);
 			};
@@ -92,12 +101,16 @@ export default function Arena() {
 	}, [didClickNextMatch]);
 
 	// possibly useRef for matches variable to keep track of current match up information and reduce re-renders
-	if (charactersCollection.length > 0 && matchesCollection.length > 0) {
-		console.log('GENERATE MATCH ONLY WITH LENGTH ');
+	if (charactersCollection.length > 0 && matchesCollection.length > 0 && (didClickNextMatch || !generateOnMount)) {
+		// console.log('GENERATE MATCH ONLY WITH LENGTH');
+		if(!generateOnMount) {
+			setGenerateOnMount(true);
+		}
 		generateMatch();
 	}
 
 	const buttonHandler = () => {
+		console.log(`- CLICK -`);
 		setDidClickNextMatch(true);
 	};
 
@@ -135,5 +148,5 @@ export default function Arena() {
 				/>
 			</div>
 		</div>
-	);
-}
+	); //end of return
+} // end of arena
