@@ -35,9 +35,8 @@ export default function Arena() {
 		character2 = charactersCollection[char2];
 
 		matchesCollection.forEach(doc => {
-			if ((doc.name1 === character1.name || doc.name1 === character2.name) &&
-			(doc.name2 === character1.name || doc.name2 === character2.name)) {
-				// console.log('MATCH EXISTS ', doc);
+			if((doc.id1 === character1.id || doc.id1 === character2.id) &&
+			(doc.id2 === character1.id || doc.id2 === character2.id)) {
 				match = doc;
 				doesMatchExist = true;
 			}
@@ -62,11 +61,12 @@ export default function Arena() {
 			} else {
 				match = {...match, ['votes2']:match?.votes2+1};
 			}
-
 			// firestore stuff
 			if(match?.id) {
+				const matchId = match.id;
 				//setDoc
-				setDoc(doc(db, 'matches', match.id), {...match});
+				delete match.id;
+				setDoc(doc(db, 'matches', matchId), {...match});
 			} else {
 				//addDoc
 				setDoc(doc(db, 'matches', `${match.name1.trim()}vs${match.name2.trim()}`), {...match});
@@ -90,7 +90,7 @@ export default function Arena() {
 				
 				await getDocs(collection(db, 'matches')).then(snapshot => {
 					snapshot.docs.forEach(doc => {
-						const matchData = {...doc.data(), ['matchId']: doc.id };
+						const matchData = {...doc.data(), ['id']: doc.id };
 						matches.push(matchData);
 					});
 				});
@@ -103,7 +103,6 @@ export default function Arena() {
 			}
 		};
 		
-		// console.log('didClickNextMatch:',didClickNextMatch);
 		if (didClickNextMatch) {
 			document.addEventListener('click', generateMatch);
 			setDidClickNextMatch(false);
@@ -118,6 +117,7 @@ export default function Arena() {
 			setCharacterVoted(false);
 		}
 		fetchCollection();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [didClickNextMatch]);
 
 	// possibly useRef for matches variable to keep track of current match up information and reduce re-renders
@@ -152,8 +152,8 @@ export default function Arena() {
 					onClick={() => upVote(1)}
 				>
 					<GameCard
-						characterName={`${character1?.name}`}
-						imgSrc={`${character1?.image}`}
+						characterName={`${character1?.id === match?.id1 ? character1?.name : character2?.name}`}
+						imgSrc={`${character1?.id === match?.id1 ? character1?.image : character2?.image}`}
 					/>
 				</button>
 				<div className={styles.votesNextContainer}>
@@ -171,8 +171,8 @@ export default function Arena() {
 					onClick={() => upVote(2)}
 				>
 					<GameCard
-						characterName={`${character2?.name}`}
-						imgSrc={`${character2?.image}`}
+						characterName={`${character2?.id === match?.id2 ? character2?.name : character1?.name}`}
+						imgSrc={`${character2?.id === match?.id2 ? character2?.image : character1?.image}`}
 					/>
 				</button>
 			</div>
