@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import styles from "../styles/Form.module.css";
 import React from 'react';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, query, where, getDocs, limit } from "firebase/firestore";
 import db from '../firebase.config.js';
 
 class Form extends React.Component {
@@ -57,22 +57,40 @@ class Form extends React.Component {
 			image: this.imgUrl
 		});
 	}
+	
+	async validateCharacter(n, f) {
+		n = n.trim();
+		f = f.trim();
+		const q = query(collection(db, 'characters'), where("name", "==", n), where("franchise", "==", f), limit(10));
+		const qSnapshot = await getDocs(q).catch((err) => { console.log(err); });
+	
+		console.log("snapshot is empty: ", qSnapshot.empty);
+		return qSnapshot.empty;
+	}
 
 	render() {
 		return (
 			<div className={styles.formContainer}>
 				<form className={styles.form} ref={this.formRef} onSubmit = {(e) => {
-					console.log(this.dimsValid());
-					if (this.dimsValid()) {
-						e.preventDefault();
-						console.log("Image valid!");
-						this.sendToFirestore(); //send character info to firestore
-						this.clearInputs();
-					}
-					else {
-						e.preventDefault();
-						alert("Dimensions invalid! Please keep dimensions between 250 x 250 and 1000x1000!");
-					}
+					this.validateCharacter(this.charname,this.charfranch)
+						.then(r => {
+							console.log("async", r);
+							if(r){
+								e.preventDefault();
+								if (this.dimsValid()) {
+									e.preventDefault();
+									console.log("Image valid!");
+									//this.sendToFirestore(); //send character info to firestore
+									this.clearInputs();
+								} else {
+									e.preventDefault();
+									alert("Dimensions invalid! Please keep dimensions between 250 x 250 and 1000x1000!");
+								}
+							} else {
+								e.preventDefault();
+								alert("This character has already been added!");
+							}
+						});
 				}}>
 					<label htmlFor="characterName" className={styles.formLabel}>
 						Character Name
