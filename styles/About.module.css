@@ -79,9 +79,31 @@
   }
   .aboutContentContainer {
     flex-direction: column;
+    width: 90%;
   }
   .detailsHeading {
     font-size: 1.75rem;
   }
 }
 
+@media only screen and (max-width: 650px) {
+  .projectDetailsContainer {
+    width: 98%;
+    margin: 0.25rem 0 3rem;
+  }
+
+  .teamDetailsContainer {
+    width: 99%;
+  }
+
+  .aboutContentContainer {
+    flex-direction: column;
+  }
+
+  .detailsHeading {
+    font-size: 1.75rem;
+  }
+  .aboutPageContainer {
+    padding: 2.5em 0;
+  }
+}

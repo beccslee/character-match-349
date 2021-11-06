@@ -56,7 +56,7 @@
 
 @media only screen and (max-width: 900px) {
     .votesContainer {
-        margin: 2em 0;
+        margin: 1em 0;
         width: 100%;
     }
 }

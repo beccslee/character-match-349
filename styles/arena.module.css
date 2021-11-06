@@ -333,12 +333,13 @@
 
 @media only screen and (max-width: 600px) {
   .backButton {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    font-size: 2rem;
   }
   
   .arenaHeader {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
   .votesNextContainer {
     width: 60%;
