@@ -30,6 +30,7 @@
 	border: 5px solid;
 	border-image-slice: 1;
 	border-image-source: linear-gradient(to left, #743ad5, #5fdfff);
+	outline-offset: 5px;
 	display: flex;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
@@ -42,7 +43,7 @@
 	justify-content: space-between;
 	cursor: pointer;
 	position: relative;
-	animation: w1 2s ease-in-out infinite alternate-reverse;
+	animation: w1 1.5s ease-in-out infinite alternate-reverse;
 }
 
 .gamecardContainer:hover {
@@ -105,6 +106,6 @@
 }
 
 @keyframes w1 {
-	from {transform: rotate(-1deg)}
-	to {transform:rotate(1deg)}
+	from {transform: rotate(-0.5deg)}
+	to {transform:rotate(0.5deg)}
 }
