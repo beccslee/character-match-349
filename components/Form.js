@@ -72,25 +72,23 @@ class Form extends React.Component {
 		return (
 			<div className={styles.formContainer}>
 				<form className={styles.form} ref={this.formRef} onSubmit = {(e) => {
+					e.preventDefault();
 					this.validateCharacter(this.charname,this.charfranch)
 						.then(r => {
 							console.log("async", r);
 							if(r){
-								e.preventDefault();
 								if (this.dimsValid()) {
-									e.preventDefault();
 									console.log("Image valid!");
-									//this.sendToFirestore(); //send character info to firestore
+									this.sendToFirestore();
 									this.clearInputs();
 								} else {
-									e.preventDefault();
 									alert("Dimensions invalid! Please keep dimensions between 250 x 250 and 1000x1000!");
 								}
 							} else {
-								e.preventDefault();
 								alert("This character has already been added!");
 							}
-						});
+						})
+						.catch(console.log);
 				}}>
 					<label htmlFor="characterName" className={styles.formLabel}>
 						Character Name
