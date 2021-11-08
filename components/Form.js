@@ -35,7 +35,7 @@ class Form extends React.Component {
 	dimsValid() {
 		console.log(this.imgWidth);
 		console.log(this.imgHeight);
-		if ((this.imgWidth < 250) || (this.imgWidth > 1000) || (this.imgHeight < 250) || (this.imgHeight > 1000)) {
+		if ((this.imgWidth < 250) || (this.imgWidth > 1250) || (this.imgHeight < 250) || (this.imgHeight > 1250)) {
 			return false;
 		}
 		return true;
@@ -82,7 +82,7 @@ class Form extends React.Component {
 									this.sendToFirestore();
 									this.clearInputs();
 								} else {
-									alert("Dimensions invalid! Please keep dimensions between 250 x 250 and 1000x1000!");
+									alert("Dimensions invalid! Please keep dimensions between 250 x 250 and 1250x1250!");
 								}
 							} else {
 								alert("This character has already been added!");
