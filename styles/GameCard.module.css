@@ -106,6 +106,6 @@
 }
 
 @keyframes w1 {
-	from {transform: rotate(-0.5deg)}
-	to {transform:rotate(0.5deg)}
+	from {transform: rotate(-0.75deg)}
+	to {transform:rotate(0.75deg)}
 }
