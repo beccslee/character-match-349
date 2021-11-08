@@ -82,7 +82,7 @@ class Form extends React.Component {
 									this.sendToFirestore();
 									this.clearInputs();
 								} else {
-									alert("Dimensions invalid! Please keep dimensions between 250 x 250 and 1250x1250!");
+									alert("Dimensions invalid! Please keep dimensions between 250 x 250 and 1250 x 1250!");
 								}
 							} else {
 								alert("This character has already been added!");
