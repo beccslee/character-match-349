@@ -1,3 +1,9 @@
+## To use the site itself:
+
+Simply visit our website at https://who-would-win-eosin.vercel.app/
+Here you have the option of scrolling down and submitting a character in our form. Characters in our database are based off of their franchise and name (with an img URL as well). If you try to submit any character with the same name and franchise, they won't be accepted. Image URLs must be between 250 x 250 and 1250 x 1250. This is done to preserve the scaling of images in our arena. After you've submitted as many characters as you like, enter the arena by clicking "Play Now". There, you will see randomly-generated matchups of characters. Here you can vote on who you think would win in a match, and see how your votes contribute to the overall vote count(s) of your matchups. There will be nC2 possible matches, where n represents the total number of characters in our database. Watch random matchups form and have fun voting! If you'd like to go back to the home page, click the blue back button on the top left of the screen. There you can either submit more characters, view some additional information about our project, and access these sections using our navigation. Enjoy!
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -21,18 +27,3 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
